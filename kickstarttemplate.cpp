@@ -9,7 +9,7 @@ int main() {
     int t;
     cin >> t;
     for (int tc=1; tc<=t; ++tc) {
-        cout << "Case #" << tc << ": " << 12435 << '\n';
+        cout << "Case #" << tc << ": " << "lorem ipsum" << '\n';
     }
     return 0;
 }
