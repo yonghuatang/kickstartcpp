@@ -1,8 +1,8 @@
 # include <bits/stdc++.h>
 using namespace std;
 
-void solve() {
-   
+int solve() {
+    return NULL;
 }
 
 int main() {
