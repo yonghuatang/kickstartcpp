@@ -2,16 +2,18 @@
 using namespace std;
 
 pair<int, int> mypair;
-vector<int> myvector;
+vector<pair<int, int>> myvector;
 int n=10;
 
 int main() {
-    for (int i=1; i<n; ++i) {
-        mypair={i,i+1};
-        myvector.push_back(mypair);
+    for (int i=1; i<=n; i++) {
+        auto p = std::make_pair(i,i+1);
+        myvector.push_back(p);
     }
-    for (pair<int, int> i=0; i<n; ++i) {
-        cout << myvector[i] << endl;
+    for (int i=0; i<n; i++) {
+        cout << "Pair #" << i+1 << ": ";
+        cout << myvector[i].first << " ";
+        cout << myvector[i].second << endl;
     }
     return 0;
-}//??
+}
