@@ -1,12 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-
-int solve() {  // CHANGE RETURN TYPE
-    // YOUR CODE HERE
-    return NULL;
-}
-
 int main() {
     int t;
     cin >> t;
@@ -14,7 +8,7 @@ int main() {
         // DECLARE AND READ VARIABLES HERE
 
         // YOUR CODE HERE
-        cout << "Case #" << tc << ": " << solve() << '\n';
+        cout << "Case #" << tc << ": " << 000000 << '\n';
     }
     return 0;
 }
