@@ -1,44 +1,31 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-long long n, x, ai;
-int arr[100000], order[100000];
-int j=0;
-
-void ans() {
-    for (int i=0; i<n; ++i) {
-        cout << order[i] << " ";
-    }
-}
+typedef long long ll;
 
 int main() {
-    ios::sync_with_stdio(0);
-    cin.tie(0);
-
     int t;
     cin >> t;
-    for (int i=1; i<=t; ++i) {
+    for (int tc=1; tc<=t; tc++) {
+        int n;
+        ll x, ai;
+        queue<pair<int, ll>> q;  // <order, withdrawAmount>
         cin >> n >> x;
-        for (int i=0; i<n; ++i) {
+        for (int i=1; i<=n; i++) {
             cin >> ai;
-            arr[i] = ai;   
+            q.push(make_pair(i, ai));
         }
-        int j=0;
-        int it=ceil(1000000000/x);
-        while (it--) {
-            for (int i=0; i<n; ++i) {
-                arr[i]-=x;
-                if (arr[i]<=0) {
-                    order[j] = i+1;
-                    ++j;
-                }
+        cout << "Case #" << tc << ":";
+        while (!q.empty()) {
+            auto currentPeople = q.front();
+            if (currentPeople.second <= x) {
+                cout << " " << currentPeople.first;
+            } else {
+                q.push(make_pair(currentPeople.first, currentPeople.second - x));
             }
-            
-
+            q.pop();
         }
-
-        cout << "Case #" << i << ": ";
-        ans();
+        cout << "\n";
     }
     return 0;
-}//wa
+}  // TLE
