@@ -8,24 +8,26 @@ int main() {
         string s;
         cin >> s;
         int n = s.size();
-        int ans;
-        if (n<9) {
-            ans = 0;
-        } else {
-        queue<int> q;
-        for (int i=0; i<=n-5; i++) {
-            if (s.substr(i, 4) == "KICK") {
-                q.push(0);
+        int ans = 0;
+        if (n<9) {} else {
+            stack<int> dp;
+            for (int i=0; i<=n-5; i++) {
+                if (s.substr(i, 4) == "KICK") {
+                    dp.push(1);
+                }
+                if (s.substr(i, 5) == "START") {
+                    dp.push(0);
+                }
             }
-            if (s.substr(i, 5) == "START") {
-                q.push(1);
+            int startCount = 0;
+            while (!dp.empty()) {
+                if (!dp.top()) {
+                    startCount++;
+                } else {
+                    ans += startCount;
+                }
+                dp.pop();
             }
-        }
-        while (!q.empty()) {
-            for (auto it=) {
-
-            }
-            q.pop();
         }
         cout << "Case #" << tc << ": " << ans << '\n';
     }
