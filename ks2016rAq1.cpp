@@ -1,37 +1,40 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int n;
+typedef pair<string, int> PAIR;  // <name, numberOfDistinctLetters>
+
+// Comparator
+struct comp {
+    bool operator()(const PAIR& p1, const PAIR& p2) {
+        if (p1.second == p2.second) {
+            return p1.first > p2.first;
+        }
+        return p1.second < p2.second;
+    }
+};
 
 int main() {
-    ios::sync_with_stdio(0);
-    cin.tie(0);
-
     int t;
     cin >> t;
-    for (int i=1; i<=t; ++i) {
+    for (int tc=1; tc<=t; tc++) {
+        int n;
         cin >> n;
-        string arr[n];
-        for (int i=0; i<n; ++i) {
+        priority_queue<PAIR, vector<PAIR>, comp> pq;
+        set<char> s;
+        cin.ignore();
+        for (int i=0; i<n; i++) {
             string name;
-            cin >> name;
-            arr[i]=name;
-        }
-        int count=0;
-        for (string name: arr) {
-            int length=sizeof(arr[i]);
-            vector<char> store;
-            for (int j=0; j<length; ++j) {
-                if (!name[j]: store) {
-                    store.push_back(name[j]);
+            s.clear();
+            getline(cin, name);
+            for (const auto& c : name) {
+                if (c == ' ') {
+                    continue;
                 }
-                else {
-                    store.pop_back;
-                }
+                s.insert(c);
             }
+            pq.push(make_pair(name, s.size()));
         }
-        sort(arr, arr+n);
-        cout << "Case #" << i << ": ";
+        cout << "Case #" << tc << ": " << pq.top().first << '\n';
     }
     return 0;
-}  //??
+}
