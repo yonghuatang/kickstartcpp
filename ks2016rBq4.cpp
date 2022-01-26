@@ -7,9 +7,9 @@ int main() {
     int t;
     cin >> t;
     for (int tc=1; tc<=t; tc++) {
-        // DECLARE AND READ VARIABLES HERE
-        // YOUR CODE HERE
-        cout << "Case #" << tc << ": " << 000000 << '\n';
+        int n, m;
+        // Number of permutations: nPn = n!
+        cout << "Case #" << tc << ": " << ans % m << '\n';
     }
     return 0;
 }
