@@ -1,6 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+#define INF 1000000007
 typedef long long ll;
 
 int main() {
@@ -10,19 +11,12 @@ int main() {
         int ans = 0;
         string s, f;
         cin >> s >> f;
-        vector<int> favourites;
-        for (const char& c : f) {
-            favourites.push_back((int)c-97);  // ASCII: 'a' = 97 ~ 'z' = 122
-        }
         for (const char& c : s) {
-            int ascii = (int)c;
-            int countIncrease = 0, countDecrease = 0;
-            while () {
-                if () {
-                    
-                }
+            int count = INF;
+            for (const char& fav: f) {
+                count = min(count, min(abs(c-fav), 26-abs(c-fav)));
             }
-            ans += min(countIncrease, countDecrease);
+            ans += count;
         }
         cout << "Case #" << tc << ": " << ans << '\n';
     }

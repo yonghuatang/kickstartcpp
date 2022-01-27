@@ -2,8 +2,8 @@
 using namespace std;
 
 int main() {
-    std::string name;
-    std::cout << "What is your name? ";
-    std::getline(std::cin, name);
-    std::cout << "Hello " << name << ", nice to meet you.\n";
+    int a = 97;
+    cout << (char)a << endl;
+    cout << 'b' - 'a' << endl;
+    return 0;
 }
