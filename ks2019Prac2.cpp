@@ -14,7 +14,7 @@ int main() {
         vector<int> v, dp{0};  // range sum
         int num = ceil((float)n/2), beauty = 0;
         for (const char& c : s) {
-            v.push_back((int)c - 48);
+            v.push_back((int)c - 48);  // ASCII
         }
         for (int i=0; i<n; i++) {
             dp.push_back(v[i]+dp[i]);
