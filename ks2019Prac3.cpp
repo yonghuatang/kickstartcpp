@@ -31,6 +31,7 @@ int main() {
     for (int tc=1; tc<=t; tc++) {
         int n, k, x1, y1, c, d, e1, e2, f;
         cin >> n >> k >> x1 >> y1 >> c >> d >> e1 >> e2 >> f;
+        vector<int> vec_xi{x1}, vec_yi{y1}, vec_ai;  // memoisation
         std::function<int(int)> xi, yi, ai;
         auto xi = [=](int i) -> int {
             if (i == 1) {
@@ -54,4 +55,4 @@ int main() {
         cout << "Case #" << tc << ": " << power % MOD << '\n';
     }
     return 0;
-}
+} // ??
