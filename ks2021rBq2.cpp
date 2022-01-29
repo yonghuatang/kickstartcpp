@@ -22,4 +22,4 @@ int main() {
         cout << "Case #" << tc << ": " << ans << '\n';
     }
     return 0;
-}
+}  // ??
