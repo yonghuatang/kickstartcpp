@@ -1,28 +1,30 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int n;
-
 int main() {
     int t;
     cin >> t;
-    for (int i=1; i<=t; ++i) {
+    for (int tc=1; tc<=t; tc++) {
+        int n, ans = 0;
         cin >> n;
-        int arr[n];
-        for (int i=0; i<n; ++i) {
-            int num;
-            cin >> num;
-            arr[i]=num;
+        vector<int> v(n, 0);
+        for (int i=0; i<n; i++) {
+            cin >> v[i];
         }
-        int max = arr[0];
-        int record_breaking=0;
-        for (int i=0; i<n; ++i) {
-            if (arr[i]>max) {
-                arr[i]=max;
-                ++record_breaking;
+        int largest = v[0];
+        if (v[0] > v[1]) {  // consider the first case
+            ans++;
+        }
+        for (int i=1; i<n-1; i++) {
+            if (v[i] > largest && v[i] > v[i+1]) {
+                ans++;
+                largest = v[i];
             }
         }
-        cout << "Case #" << i << ": " << record_breaking;
+        if (v[n-1] > largest) {  // consider the last day
+            ans++;
+        }
+        cout << "Case #" << tc << ": " << (n == 1 ? 1 : ans) << endl;
     }
     return 0;
 }
