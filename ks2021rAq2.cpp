@@ -7,15 +7,17 @@ int main() {
     int t;
     cin >> t;
     for (int tc=1; tc<=t; tc++) {
-        int r, c;
+        int r, c, ans;
         cin >> r >> c;
-        vector<vector<int>> grid;
+        vector<vector<bool>> grid(r, vector<bool>(c, 0));
         for (int i=1; i<=r; i++) {
             for (int j=1; j<=c; j++) {
-                cin >> grid[i][j];
+                bool b;
+                cin >> b;
+                grid[i][j] = b;
             }
         }
-        cout << "Case #" << tc << ": " << 000000 << '\n';
+        cout << "Case #" << tc << ": " << ans << '\n';
     }
     return 0;
 } //??
