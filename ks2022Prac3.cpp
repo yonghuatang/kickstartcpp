@@ -43,4 +43,4 @@ int main() {
         cout << "Case #" << tc << ": " << 000000 << '\n';
     }
     return 0;
-}
+}  // ??
