@@ -20,4 +20,4 @@ int main() {
         cout << "Case #" << tc << ": " << ans % MOD << '\n';
     }
     return 0;
-}
+}  // WA
